@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'UnitPage.dart';
+
+class functionPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: FunctionPage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
 
 class FunctionPage extends StatefulWidget {
   @override
@@ -35,6 +46,7 @@ class _FunctionPageState extends State<FunctionPage> {
           ),
         ),
       ),
+
       body: Container(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -80,17 +92,26 @@ class _FunctionPageState extends State<FunctionPage> {
               height: 20,
             ),
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    unitName('안녕하세요?', 'Қалайсыз?'),
-                    unitName('우리 동생이에요', 'Бұл менің қарындасым'),
-                    unitName('엄마는 영국 사람이에요', 'Менің анам британдық'),
-                    unitName('책이 어디에 있어요?', 'Кітап қайда?')
-                  ],
+                child: InkWell(
+                  onTap: () => {
+                    Navigator.of(context).pop(),
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UnitPage(),
+                        ))
+                  },
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        unitName('안녕하세요?', 'Қалайсыз?'),
+                        unitName('우리 동생이에요', 'Бұл менің қарындасым'),
+                        unitName('엄마는 영국 사람이에요', 'Менің анам британдық'),
+                        unitName('책이 어디에 있어요?', 'Кітап қайда?')
+                      ],
                 ),
               ),
-            )
+            ))
           ],
         ),
       ),
@@ -151,4 +172,5 @@ class _FunctionPageState extends State<FunctionPage> {
       ],
     );
   }
+
 }

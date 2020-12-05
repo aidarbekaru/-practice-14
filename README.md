@@ -1,3 +1,7 @@
+# Inside the file in dl, there is a full description of the functionality of my App. 
+# Done part of the work for practice 14 is half of it, which is shown in the video: 
+# https://youtu.be/3DiYv8xp9Cc
+
 # koreanapppart2aru
 
 A new Flutter application.
